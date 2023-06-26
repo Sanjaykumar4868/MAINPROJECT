@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>HOME</title>
+    <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+</head>
+<body class="bodybg">
+   <!-- <h1>welcome to home page</h1> -->
+
+   <div class="bgimage">  
+    <div class="card-overlay">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark ontop">
+      <img src="{% static 'IMAGE/logo1.jpg' %}" alt="" class="logo">
+        <a class="navbar-brand" href="#">WOOTURTLE KOCHI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ">
+            {% if user.is_authenticated %}
+            <a class="nav-link active" id="text" href="{% url 'logout' %}">LOGOUT</a>
+            <a class="nav-link active" id="text" href="{% url 'password_change' %}">CHANGE PASSWORD</a>
+              <a class="nav-link active" id="text" href="#">BUY PRODUCTS</a>
+            {% else %}
+            <a class="nav-link active" id="text" href="{% url 'signup' %}">SIGNUP</a>
+            <a class="nav-link active" id="text" href="{% url 'login' %}">LOGIN</a>
+            {% endif %}
+          </div>
+        </div>
+    </nav>
+     
+ 
+   
+    <div class="container ">
+      <div class="row py-5 my-5  ">
+        <div class="col-lg-12">
+            <h1>Tables</h1>
+            <hr>
+        </div>
+        <div class="col-lg-7 maintopic pt-3 padding">
+          <h5> Table is one of the essential pieces of furniture to increase the functionality of your interiors. These wooden tables are the perfect functional pieces of furniture that can effectively glam up the decor of your space. . At Wooden Street, you will come across an extensive range of modern and multi-utility Sheesham wood corner table online furniture which not only serves usability but also add the charm of your home decor. Buy tables online from our collection that are precisely designed to fulfill Indian furniture needs. A table-top offers many decor possibilities that can charm up your interiors to a great extent. At WoodenStreet, enjoy the luxury of premium-quality & sturdy tables in varied designs to match everyone's desired use. Scroll down to explore our wide range of wood table designs.</h5>
+        </div>
+        <div class="col-lg">
+          <img src="{% static 'IMAGE/img13.jpg' %}" alt=""class="w-75  pl-4">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+       <div class="container">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade w-75" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active ">
+            <img src="{% static 'IMAGE/img1.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item w-100">
+            <img src="{% static 'IMAGE/img3.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item w-100">
+            <img src="{% static 'IMAGE/img6.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#carouselExampleFade" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#carouselExampleFade" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
+      </div>
+    <section>
+      <div class="container">
+          <div class="carousel ">
+                <input type="radio" name="slides" checked="checked" id="slide-1">
+                <input type="radio" name="slides" id="slide-2">
+                <input type="radio" name="slides" id="slide-3">
+                <input type="radio" name="slides" id="slide-4">
+                <input type="radio" name="slides" id="slide-5">
+                <input type="radio" name="slides" id="slide-6">
+                <ul class="carousel__slides">
+                    <li class="carousel__slide">
+                        <figure>
+                            <div>
+                                <img src="{% static 'IMAGE/img1.jpg' %}" alt="">
+                            </div>
+                            <figcaption>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <span class="credit">Photo: Tim Marshall</span>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carousel__slide">
+                        <figure>
+                            <div>
+                                <img src="{% static 'IMAGE/img2.jpg' %}" alt="">
+                            </div>
+                            <figcaption>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <span class="credit">Photo: Christian Joudrey</span>                            
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carousel__slide">
+                        <figure>
+                            <div>
+                                <img src="{% static 'IMAGE/img3.jpg' %}" alt="">
+                            </div>
+                            <figcaption>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <span class="credit">Photo: Steve Carter</span>                            
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carousel__slide">
+                        <figure>
+                            <div>
+                                <img src="{% static 'IMAGE/img4.jpg' %}" alt="">
+                            </div>
+                            <figcaption>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <span class="credit">Photo: Aleksandra Boguslawska</span>                            
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carousel__slide">
+                        <figure>
+                            <div>
+                                <img src="{% static 'IMAGE/img5.jpg' %}" alt="">
+                            </div>
+                            <figcaption>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <span class="credit">Photo: Rosan Harmens</span>                            
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carousel__slide">
+                        <figure>
+                            <div>
+                                <img src="{% static 'IMAGE/img6.jpg' %}" alt="">
+                            </div>
+                            <figcaption>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <span class="credit">Photo: Annie Spratt</span>                            
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>    
+                <ul class="carousel__thumbnails">
+                    <li>
+                        <label for="slide-1"><img src="{% static 'IMAGE/img1.jpg' %}" alt=""></label>
+                    </li>
+                    <li>
+                        <label for="slide-2"><img src="{% static 'IMAGE/img2.jpg' %}" alt=""></label>
+                    </li>
+                    <li>
+                        <label for="slide-3"><img src="{% static 'IMAGE/img3.jpg' %}" alt=""></label>
+                    </li>
+                    <li>
+                        <label for="slide-4"><img src="{% static 'IMAGE/img4.jpg' %}" alt=""></label>
+                    </li>
+                    <li>
+                        <label for="slide-5"><img src="{% static 'IMAGE/img5.jpg' %}" alt=""></label>
+                    </li>
+                    <li>
+                        <label for="slide-6"><img src="{% static 'IMAGE/img6.jpg' %}" alt=""></label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+ 
+
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</body>
+</html>
+
