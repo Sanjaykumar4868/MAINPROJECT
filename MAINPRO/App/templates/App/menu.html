@@ -1,0 +1,5 @@
+{% for category in categories %}
+<a class="nav-link active" id="text" href="{% url 'category_detail' category.slug %}"> {{category.title}}</a>
+{% endfor %}
+
+

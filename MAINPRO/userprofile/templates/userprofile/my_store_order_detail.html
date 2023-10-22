@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oredr detail {{order.id}}</title>
+</head>
+<body>
+    order detail: {{order.id}}
+
+    <h2>my product in this order</h2>
+<table>
+
+
+    <!-- <div class="flex flex-wrap">
+      
+        <div class="w-1/3">
+            <strong>Title</strong>
+        </div>
+        <div class="w-1/3">
+            <strong>Quantity</strong>
+        </div>
+        <div class="w-1/3">
+            <strong>Price</strong>
+        </div>
+    </div>
+
+
+    {% for item in order.items.all %}
+        {% if item.product.user == request.user %}
+        <div class="flex flex-wrap">
+            
+            <div class="w-1/3">
+               {{ item.product.title }}
+            </div>
+            <div class="w-1/3">
+                {{ item.quantity }}
+             </div>
+             <div class="w-1/3">
+                {{ item.get_display_price }}
+             </div>
+        </div>
+        {% endif %}
+    {% endfor %}    
+     -->
+
+    <table>
+        <!-- <caption>2019 Fourth Quarter Report</caption> -->
+        <thead>
+          <tr>
+            
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          <tr>
+        </thead>
+        <tbody>
+            {% for item in order.items.all %}
+                {% if item.product.user == request.user %}
+            <tr>
+                <th> {{ item.product.title }}</th>
+                <td>{{ item.quantity }}</td>
+                <td>$ {{ item.get_display_price }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %} 
+        </tbody>
+      </table>
+
+
+
+
+
+</table>
+</body>
+</html>

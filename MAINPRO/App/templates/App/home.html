@@ -1,0 +1,844 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>HOME</title>
+    <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+</head>
+<body >
+  <div class="arrow-btn">
+    <a href="#"><span class="fa fa-angle-up"></span></a>
+  </div>
+   <!--header section start> -->
+<header>
+    <div class="">
+      <nav class="navbar navbar-expand-lg navbar-dark bgcolor ontop py-0 my-0">
+        <img src="{% static 'IMAGE/logo1.jpg' %}" alt="" class="logo">
+        <a class="navbar-brand navmainhead" href="#">WOOTURTLE KOCHI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+   
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+          <!-- <div class="search"> 
+            <form method="get" action="/search/">
+              <input type="search" name="query" placeholder="search...">
+              <button>search</button>
+            </form>
+          </div> -->
+          <div class="navbar-nav navheading ml-auto menu">
+            
+              {% if user.is_authenticated %}
+              <a class="nav-link active" id="text" href="{% url 'productpage' %}"> PRODUCTS</a>
+              <a class="nav-link active" id="text" href="{% url 'logout' %}">LOGOUT</a>
+              {% if request.user.userprofile.is_vendor %}
+                <a class="nav-link active" id="text" href="{% url 'my_store' %}">MY STORE</a>
+              {% endif %}
+              <a class="nav-link active" id="text" href="{% url 'myaccount' %}">MY ACCOUNT</a>
+              
+              <a class="nav-link active" id="text" href="{% url 'password_change' %}">CHANGE PASSWORD</a>
+              
+             <a href="{% url 'cart_view' %}"><i class="fa fa-shopping-cart pl-3 pr-4 cart" aria-hidden="true" ><span class="pl-1">({{ cart|length }})</span> </i></a> 
+              
+              {% else %}
+              <a class="nav-link active" id="text" href="{% url 'productpage' %}"> PRODUCTS</a>
+              <a class="nav-link active" id="text" href="{% url 'login' %}">LOGIN </a>  
+              <a class="nav-link active" id="text" href="{% url 'signup' %}">SIGNUP</a>  
+              
+                
+              {% endif %}
+          </div>
+          <form method="get" action="/search/" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search items..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </div>
+  
+</header>
+
+<section class="pt-0">
+  <div class="banner-container   ">
+      <div class="container  ">
+            <h1 class="mainheadingsize">let's make home happy face.</h1>          
+        </div>
+  </div>
+</section>
+      
+
+
+
+
+  <!--header section end> -->
+
+
+<!-- first body start -->
+
+<section-body>
+  <div class="container text-center reveal">
+    <div class="row ">
+      <div class="col-lg-12 ">
+        <h1 class="mainhead">WHO WE ARE .</h1>
+        <hr>
+      </div>
+      <div class="col-lg px-5 text-muted">
+        <p>WOOTURTLE, like the name mentioned it's similar to the turtle with the
+          qualities of durability and ageing. And the making of our product requires tolerance
+          and time to get the optimum result.
+          Our team have 17 years of experience in carpentry field. We got this
+          interesting idea in 2018, from that time on we are making epoxy wood products for
+          our clients. We are focusing on designing your home office and other spaces with
+          our premium art furniture to melt your soul .</p>
+      </div>
+    </div>
+    <div class="row pt-5 ">
+        <div class="col-md-4 ">
+          <img src="{% static 'IMAGE/img8.jpg' %}" alt="">
+        </div>
+        <div class="col-md-4 ">
+          <img src="{% static 'IMAGE/img10.jpg' %}" alt="">
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'IMAGE/img14.jpg' %}" alt="">
+        </div>
+    </div>
+  </div>
+</section-body>
+
+
+<!-- first body end -->
+
+<!-- second body start -->
+
+<section class="secondbody">
+  <div class="container-fluid reveal text-muted">
+    <div class="row secondbodyalign   mr-0 ">
+      <div class="col-md-4 ">
+        <img src="{% static 'IMAGE/img10.jpg' %}" class="d-block " alt="" >
+      </div>
+      <div class="col-md-4  ">
+        <h2>THE NEW LINE OF PREMIUM FURNITURES</h2>
+        <hr>
+        <p>The case when you discover a new world of furniture. This is a world in which
+          every table claims to be the best. Where a person is no longer limited in the choice;
+          high quality or beautiful. This is a world in which everything is thought out to the
+          smallest detail. WOOTURTLE aims to illustrate the new mantra of furniture designs.
+          We showcased and all new range of wooden epoxy furniture for day-to-day
+          applications. Dedicated to create simple, premium, uncluttered and durable
+          customized furniture for home, office ,hotels, restaurants, corporate offices and the
+          premises
+          Beauty, comfort, quality these are the three things we can guarantee for any
+          customer that chooses our epoxy table</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- second body end -->
+
+
+<!-- third body start  -->
+
+
+<section class=" sampleprod ">
+  <div class="container-fluid  ">
+    <div class="row sampleproduct1 text-center mx-auto reveal">
+      <div class="col-lg-12  ">
+        <h1 class="">Some of our products are...</h1>
+        <hr>
+      </div>
+      <div class="col-lg pb-5">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quis voluptatem. Velit pariatur dolore nemo, vitae facilis animi ratione culpa beatae ipsum non? Tempore ullam blanditiis animi modi nihil enim.</p>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 align mx-auto reveal">
+      <div class="col-md-4 mb-3 px-0 center">
+        <div class="card ">
+          <img src="{% static 'IMAGE/img2.jpg' %}" class="card-img-top " alt="text">
+        </div>
+      </div>
+      <div class="col-md-4 mb-3 px-0 center">
+        <div class="card ">
+          <img src="{% static 'IMAGE/img3.jpg' %}" class="card-img-top" alt="text">
+        </div>
+      </div>
+      <div class="col-md-4 mb-3 px-0 center">
+        <div class="card ">
+          <img src="{% static 'IMAGE/img4.jpg' %}" class="card-img-top" alt="text">
+        </div>
+      </div>
+    </div> 
+    <div class="row row-cols-1 row-cols-md-2 align mx-auto reveal">
+      <div class="col-md-4 mb-3 px-0 center">
+        <div class="card ">
+          <img src="{% static 'IMAGE/img7.jpg' %}" class="card-img-top" alt="text">
+        </div>
+      </div>
+      <div class="col-md-4 mb-3 px-0 center">
+        <div class="card ">
+          <img src="{% static 'IMAGE/img6.jpg' %}" class="card-img-top" alt="text">
+        </div>
+      </div>
+      <div class="col-md-4 mb-3 px-0 center">
+        <div class="card">
+          <img src="{% static 'IMAGE/img4.jpg' %}" class="card-img-top" alt="text">
+        </div>
+      </div>
+    </div> 
+    <div class="sampleprodbutton pt-5 reveal">
+      <button class="btn btn-primary "><a href="{% url 'productpage' %}" >view more ...</a></button>
+    </div>
+    
+  </div>
+</section>
+
+
+<!-- third body end  -->
+
+
+<!--review new body -->
+<section class="reviewsection">
+  <div class="container py-5 ">
+    <div class="row d-flex justify-content-center reveal">
+      <div class="col-md-10 col-xl-8 text-center">
+        <h3 class="fw-bold mb-4 pt-5 mt-5">Testimonials</h3>
+        <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
+          numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum
+          quisquam eum porro a pariatur veniam.
+        </p>
+      </div>
+    </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <!-- <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol> -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row text-center reveal">
+            <div class="col-md-4 mb-4 mb-md-0">
+              <div class="card">
+                <div class="card-body  mt-2">
+                  <div class="d-flex justify-content-center mb-4">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                      class="rounded-circle shadow-1-strong" width="100" height="100" />
+                  </div>
+                  <h5 class="font-weight-bold">Teresa May</h5>
+                  <h6 class="font-weight-bold my-3">Bangloor</h6>
+                  <ul class="list-unstyled d-flex justify-content-center">
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fas fa-star-half-alt fa-sm text-info"></i>
+                    </li>
+                  </ul>
+                  <p class="mb-2">
+                    Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat
+                    ad velit ab hic tenetur.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+              <div class="card">
+                <div class="card-body  mt-2">
+                  <div class="d-flex justify-content-center mb-4">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(15).webp"
+                      class="rounded-circle shadow-1-strong" width="100" height="100" />
+                  </div>
+                  <h5 class="font-weight-bold">Maggie McLoan</h5>
+                  <h6 class="font-weight-bold my-3">Bangloor</h6>
+                  <ul class="list-unstyled d-flex justify-content-center">
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                  <p class="mb-2">
+                    Autem, totam debitis suscipit saepe
+                    sapiente magnam officiis quaerat necessitatibus odio assumenda perferendis
+                    labore laboriosam.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-0">
+              <div class="card">
+                <div class="card-body  mt-2">
+                  <div class="d-flex justify-content-center mb-4">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(17).webp"
+                      class="rounded-circle shadow-1-strong" width="100" height="100" />
+                  </div>
+                  <h5 class="font-weight-bold">Alexa Horwitz</h5>
+                  <h6 class="font-weight-bold my-3">Bangloor</h6>
+                  <ul class="list-unstyled d-flex justify-content-center">
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                  <p class="mb-2">
+                   Cras sit amet nibh libero, in gravida
+                    nulla metus scelerisque ante sollicitudin commodo cras purus odio,
+                    vestibulum in tempus viverra turpis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row text-center reveal">
+            <div class="col-md-4 mb-4 mb-md-0">
+              <div class="card">
+                <div class="card-body mt-2">
+                  <div class="d-flex justify-content-center mb-4">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                      class="rounded-circle shadow-1-strong" width="100" height="100" />
+                  </div>
+                  <h5 class="font-weight-bold">Teresa May</h5>
+                  <h6 class="font-weight-bold my-3">Bangloor</h6>
+                  <ul class="list-unstyled d-flex justify-content-center">
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fas fa-star-half-alt fa-sm text-info"></i>
+                    </li>
+                  </ul>
+                  <p class="mb-2">
+                    Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat
+                    ad velit ab hic tenetur.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+              <div class="card">
+                <div class="card-body  mt-2">
+                  <div class="d-flex justify-content-center mb-4">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(15).webp"
+                      class="rounded-circle shadow-1-strong" width="100" height="100" />
+                  </div>
+                  <h5 class="font-weight-bold">Maggie McLoan</h5>
+                  <h6 class="font-weight-bold my-3">Bangloor</h6>
+                  <ul class="list-unstyled d-flex justify-content-center">
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                  <p class="mb-2">
+                    Autem, totam debitis suscipit saepe
+                    sapiente magnam officiis quaerat necessitatibus odio assumenda perferendis
+                    labore laboriosam.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-0">
+              <div class="card">
+                <div class="card-body  mt-2">
+                  <div class="d-flex justify-content-center mb-4">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(17).webp"
+                      class="rounded-circle shadow-1-strong" width="100" height="100" />
+                  </div>
+                  <h5 class="font-weight-bold">Alexa Horwitz</h5>
+                  <h6 class="font-weight-bold my-3">Bangloor</h6>
+                  <ul class="list-unstyled d-flex justify-content-center">
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                  <p class="mb-2">
+                   Cras sit amet nibh libero, in gravida
+                    nulla metus scelerisque ante sollicitudin commodo cras purus odio,
+                    vestibulum in tempus viverra turpis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row text-center reveal">
+            <div class="col-md-4 mb-4 mb-md-0">
+              <div class="card">
+                <div class="card-body  mt-2">
+                  <div class="d-flex justify-content-center mb-4">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                      class="rounded-circle shadow-1-strong" width="100" height="100" />
+                  </div>
+                  <h5 class="font-weight-bold">Teresa May</h5>
+                  <h6 class="font-weight-bold my-3">Bangloor</h6>
+                  <ul class="list-unstyled d-flex justify-content-center">
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fas fa-star-half-alt fa-sm text-info"></i>
+                    </li>
+                  </ul>
+                  <p class="mb-2">
+                    Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat
+                    ad velit ab hic tenetur.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+              <div class="card">
+                <div class="card-body  mt-2">
+                  <div class="d-flex justify-content-center mb-4">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(15).webp"
+                      class="rounded-circle shadow-1-strong" width="100" height="100" />
+                  </div>
+                  <h5 class="font-weight-bold">Maggie McLoan</h5>
+                  <h6 class="font-weight-bold my-3">Bangloor</h6>
+                  <ul class="list-unstyled d-flex justify-content-center">
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                  <p class="mb-2">
+                    Autem, totam debitis suscipit saepe
+                    sapiente magnam officiis quaerat necessitatibus odio assumenda perferendis
+                    labore laboriosam.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-0">
+              <div class="card">
+                <div class="card-body  mt-2">
+                  <div class="d-flex justify-content-center mb-4">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(17).webp"
+                      class="rounded-circle shadow-1-strong" width="100" height="100" />
+                  </div>
+                  <h5 class="font-weight-bold">Alexa Horwitz</h5>
+                  <h6 class="font-weight-bold my-3">Bangloor</h6>
+                  <ul class="list-unstyled d-flex justify-content-center">
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                  <p class="mb-2">
+                   Cras sit amet nibh libero, in gravida
+                    nulla metus scelerisque ante sollicitudin commodo cras purus odio,
+                    vestibulum in tempus viverra turpis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+<!--  review body end -->
+
+
+
+
+
+
+
+
+
+
+<!-- fourth body start -->
+
+
+<section class="details">
+  <div class="container-fluid  ">
+    <div class="hometext px-5 reveal">
+      <h4>Explore Different Products at Wooturtlekochi for Your Humble Abode</h4>
+      <p>Wooturtlekochi houses an extensive range of furniture and furnishing, available in various designs to meet every liking. Once you visit our furniture store or check our website, you can understand how diverse how designs are. Here's a list of categories that you can expect on visiting our furniture stores or website:</p>
+      <h4>Furniture</h4>
+      <p>From home to office to kitchen, Wooturtlekochi houses every kind of furniture to offer your space structural beauty and usability. Upholstered fabric sofa sets to spacious carved cabinets, you name it and we are sure to offer the best version of it. Scroll up to explore our premium quality and affordable range of furniture. </p>
+      <h4>Furnishing</h4>
+      <p>At Wooturtlekochi, one can find the most luxurious and finest quality furnishings. From velvety curtains to unique cushion covers, there is alot we have got for you to explore. Such minimal furnishing items help you decorate your space to your liking without blowing off your budget. </p>
+      
+      <h4>Check out Various Furniture Materials Available at Wooturtlekochi</h4>
+      <p>At Wooturtlekochi, one can find a range of furniture materials in our collection. Each type of material, be it wood or metal, every material has got its distinctive beauty and quality. Here we have got a list of furniture materials to pick out the best one that blends in with your needs and comfort. </p>
+      <p>We have a wide range of furniture materials but the ones you should not miss out on are:</p>
+     
+      <h4>Mango Wood</h4>
+      <p>Mango wood is another popular choice for furniture in India. Mango wood is a hardwood that is known for its strength and density. It is often used for heavy pieces of furniture such as cabinets or armoires. Mango wood has a light colored sapwood with a dark brown heartwood and a beautiful grain pattern. Mango furniture is often finished with a light stain to bring out the natural beauty of the wood. At Wooturtlekochi, you can find the most unique designs of mango wooden furniture in our collection. </p>
+      <h4>Teak Wood</h4>
+      <p>Teak is the most popular type of wood for furniture in India. It is known for its durability and natural resistance to water and rot. Teak furniture is perfect for both indoor and outdoor use. It can be left unfinished or stained to create a beautiful look. It has a beautiful golden brown color that will deepen over time if left untreated. You can find the most engaging and sophisticated designs of furniture under teak wood material. You can also find our furniture pieces showcasing teak wood blended with brass and rattan cane.</p>
+      
+      <h4>Select from the Wide Range of Furniture Online at Wooturtlekochi</h4>
+      <p>Keeping up with the needs of modern apartments, we design artistic wooden furniture units with various additional features. Not only they provide comfort to the user but also give multiple advantages.</p>
+      
+      <h4>Bedroom</h4>
+      <p>A comfortable bedroom is everyone's need. Who doesn't want a bed that is utterly comfortable and looks ravishing at the same time? Well, do not forget about the other accessories such as mattress. We have all the furniture you need for a well-equipped bedroom like the bed with storage, single bed, double bed, divan bed, wooden tray, dressing table, bunk bed, cupboards, and required storage units. If you too are looking to buy bedroom furniture, then Wooden Street is your destination.</p>
+
+      <h4>Dining Room</h4>
+      <p>A happy meal time can be relished in the dining area of the house. A room occupied with a chic dining table, dining chairs, kitchen cabinets, crockery units, extendable dining tables, and sideboards make it a complete one for a perfect wine and dine.</p>
+
+     
+      <h4>Office Furniture</h4>
+      <p>Every piece of furniture is versatile to use anywhere around your house as you like, but that's not the case with office furniture. Even though our office furniture would be a perfect piece to showcase the utmost functionality and versatility, it is necessary to make sure you buy ergonomic and multi-functional pieces for your work corner/office. Our office furniture has all the suitable furniture and decor that would make the most out of your working space in terms of comfort and functionality. </p>
+      
+      <h4>Buy Amazing Furniture Online at Affordable Prices On Wooturtlekochi</h4>
+      <p>Buying an item of furniture online with a package of high quality and matches the budget is a difficult task. A lot of people think it's a huge investment and settle up with what they have. Wooturtlekochi understands this and ensures no one will disappoint at India’s prime furniture online store. Browse to any category, either the living room, dining room, bedroom, study room, outdoor furniture, and even home furnishings, and we offer premium quality home furniture at reasonable prices you can afford. Trust us with your furniture styles and preferences and buy beautiful furniture online at Wooturtlekochi without worrying about the prices.</p>
+    </div>
+  </div>
+</section>
+
+<!-- fourth body end -->
+
+
+
+
+
+<!-- fifth body start -->
+
+
+   
+
+
+<section-1>
+    <div class="container reveal">
+        <div class="row  detailsection">
+          <div class="col-md">
+            <div class="row">
+              <div class="col-md element">
+                 <span class="material-symbols-outlined">
+              home
+              </span>
+              </div>
+              <div class="col-md-7 element1">
+                <h4>90+</h4>
+                <p>Experience Stores
+                  Across India </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-md element">
+                <span class="material-symbols-outlined">
+                  thumb_up
+                  </span>
+              </div>
+              <div class="col-md-7 element1">
+                <h4>36 Months*</h4>
+                <p>Warranty </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm element">
+                <span class="material-symbols-outlined">
+                  local_shipping
+                  </span>
+              </div>
+              <div class="col-md-7 element1">
+                <h4>350+</h4>
+                <p>Delivery Centers
+                  Across India </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm element">
+                <span class="material-symbols-outlined">
+                  currency_rupee
+                  </span>
+              </div>
+              <div class="col-md-8 element1">
+                <h4>Lowest Price</h4>
+                <p>Guarantee </p>
+              </div>
+            </div>
+          </div>
+        </div> 
+    </div>
+</section-1>
+
+
+
+<!-- fifth body end -->
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="bg-light  text-muted reveal">
+  <!-- Section: Social media -->
+  <section class="d-flex  justify-content-lg-between p-4  border-bottom ">
+    <!-- Left -->
+    <div class="">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div class="iconsize">
+      <a href="" class=" text-reset ">
+        <i class="fa fa-facebook  iconp"></i>
+      </a>
+      <a href="" class=" text-reset ">
+        <i class="fa fa-instagram   iconp"></i>
+      </a>
+      <a href="" class=" text-reset">
+        <i class="fa fa-whatsapp iconp"></i>
+      </a>
+      <a href="" class=" text-reset">
+        <i class="fa fa-google iconp"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase mb-4">
+            <i class="fas fa-gem me-3"></i>WOOTURTLE
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase  mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Chair</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Table</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Teapoy</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Dining set</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase  mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase  mb-4">Contact</h6>
+          <p><i class="fa fa-home pr-1"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fa fa-envelope-o pr-1"></i>
+            wooturtlekochi@gmail.com
+          </p>
+          <p><i class="fa fa-phone pr-1"></i> + 91 123 456 7890</p>
+          <p><i class="fa fa-phone pr-1"></i> + 91 123 456 7890</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4 Copyright">
+    © 2021 Copyright:
+    <a class="text-reset " href="#">Just Me</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+
+
+
+<script type="text/javascript">
+  window.addEventListener('scroll',reveal);
+
+  function reveal(){
+    var reveals = document.querySelectorAll('.reveal');
+
+    for(var i =0; i < reveals.length; i++){
+
+      var windowheight = window.innerHeight;
+      var revealtop = reveals[i].getBoundingClientRect().top;
+      var revealpoint = 150;
+
+      if(revealtop < windowheight - revealpoint){
+        reveals[i].classList.add('active');
+      }
+      else{
+        reveals[i].classList.remove('active');
+      }
+    }
+  }
+</script>
+
+ 
+
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</body>
+</html>
+

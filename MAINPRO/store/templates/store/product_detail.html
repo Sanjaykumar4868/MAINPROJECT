@@ -1,0 +1,133 @@
+{% extends 'App/base.html' %}
+{% load static %}
+
+
+
+{% block title%}
+Product Detail Page
+{% endblock %} 
+
+
+     
+        {% block body_block %}
+        <div class="arrow-btn">
+            <a href="#"><span class="fa fa-angle-up"></span></a>
+          </div>
+
+    <section>
+        <div class="container pb-2">
+                    <div class="carousel ">
+                        <input type="radio" name="slides" checked="checked" id="slide-1">
+                        <input type="radio" name="slides" id="slide-2">
+                        <input type="radio" name="slides" id="slide-3">
+                        <input type="radio" name="slides" id="slide-4">
+                        <input type="radio" name="slides" id="slide-5">
+                        <!--<input type="radio" name="slides" id="slide-6"> -->
+                        <ul class="carousel__slides w-50">
+                            <li class="carousel__slide">
+                                <figure>
+                                    <div>
+                                 
+                                        <img src="{{ product.get_thumbnail }}" class="card-img-top" alt="text">
+                                    
+                                    </div>
+                                   
+                                </figure>
+                            </li>
+                            <li class="carousel__slide">
+                                <figure>
+                                    
+                                    <div>
+                                        <img src="{{ product.image1.url }}" class="card-img-top" alt="tetx">
+                                    </div>
+                                  
+                                </figure>
+                            </li>
+                            <li class="carousel__slide">
+                                <figure>
+                                    <div>
+                                        <img src="{{ product.image2.url }}" class="card-img-top" alt="">
+                                    </div>
+                                   
+                                </figure>
+                            </li>
+                            <li class="carousel__slide">
+                                <figure>
+                                    <div>
+                                        <img src="{{ product.image3.url }}" class="card-img-top" alt="">
+                                    </div>
+                                  
+                                </figure>
+                            </li>
+                            <li class="carousel__slide">
+                                <figure>
+                                    <div>
+                                        <img src="{{ product.image4.url }}" class="card-img-top" alt="">
+                                    </div>
+                                  
+                                </figure>
+                            </li>
+                            <!-- <li class="carousel__slide">
+                                <figure>
+                                    <div>
+                                        <img src="{{ product_id.image.url }}" alt="">
+                                    </div>
+                                     
+                                </figure>
+                            </li> -->
+                        </ul>    
+                        <ul class="carousel__thumbnails w-50">
+                            <li>
+                                <label for="slide-1"><img src="{{ product.get_thumbnail }}" alt=""></label>
+                            </li>
+                            <li>
+                                <label for="slide-2"><img src="{{ product.image1.url }}" alt=""></label>
+                            </li>
+                            <li>
+                                <label for="slide-3"><img src="{{ product.image2.url }}" alt=""></label>
+                            </li>
+                            <li>
+                                <label for="slide-4"><img src="{{ product.image3.url }}" alt=""></label>
+                            </li>
+                            <li>
+                                <label for="slide-5"><img src="{{ product.image4.url }}" alt=""></label>
+                            </li>
+                           <!-- <li>
+                                <label for="slide-6"><img src="{{ product_id.image3.url }}" alt=""></label>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="product_title">
+                        {{product.title}}
+                    </div>
+                    <div class="product_price pb-2 text-gray-500">
+                        Rs.{{product.get_display_price}}
+                        -
+                       <a href="{% url 'vendor_detail' product.user.id %}" class=" vendorname"> {% firstof product.user.get_full_name product.user.username %}</a>
+                    </div>
+                    {% if product.description %}
+                    <div class="product_description pb-3">
+                        {{product.description}}
+                    </div>  
+                    {% endif %}  
+                    <div class="pb-3">
+                         <button class="btn btn-primary"><a href="{% url 'add_to_cart' product.id %}" class="button1">Add to cart</a></button>
+                    </div>  
+                
+                    
+                   
+                    
+                   
+          </div>
+         
+      </section>
+        <!-- <div>
+        <img src="{{ product_id.image.url }}"  class="w-25">
+        </div> -->
+       
+ 
+
+
+
+{% endblock %}

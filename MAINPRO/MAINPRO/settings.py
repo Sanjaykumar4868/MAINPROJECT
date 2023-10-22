@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -26,6 +26,10 @@ SECRET_KEY = 'django-insecure-i)1$b)jn)q$6x4a4a%ey1ej+-#a5&)^i=s@dmdvggzh-hugxg1
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+CART_SESSION_ID = 'cart'
+SESSION_COOKIE_AGE = 86400
+
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" 
 
 # Application definition
@@ -38,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'App',
+    'userprofile',
+    'store',
 ]
 
 MIDDLEWARE = [
@@ -51,10 +57,23 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'MAINPRO.urls'
+
+
+
+
+
 LOGIN_REDIRECT_URL ='home'
-LOGOUT_REDIRECT_URL ='login'
+LOGOUT_REDIRECT_URL ='home'
 LOGIN_URL ='login'
-LOGOUT_URL ='logout'
+# LOGOUT_URL ='logout'
+
+
+WEBSITE_URL = 'http://127.0.0.1:8002/'
+
+
+STRIPE_PUB_KEY = 'pk_test_51NdlboSDZRaQZygJPqGrrusm2alQBKsJqHigsCbSCV3AwTgICpJvXcA7zqkelacmq9zUihWqlOXB1RyAK8GoMRIQ008yiID4K3'
+STRIPE_SECRET_KEY ='sk_test_51NdlboSDZRaQZygJHhYkJc7pXj8aOzk6syyuGE7LzkjEnWu6P5KAhPG4HYD75lMBFeaFPAV2HeSQx7JehoC8dfpb00E9huGEmo'
+
 
 TEMPLATES = [
     {
@@ -67,6 +86,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'store.context_processors.cart',
             ],
         },
     },
@@ -126,3 +146,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = BASE_DIR/ 'media'
