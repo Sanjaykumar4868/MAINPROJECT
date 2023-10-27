@@ -16,6 +16,12 @@
    
   {% block body_block %}
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 3d44726cf648dc3486cd21379e2fa3374c5fc728
 <!-- first body start -->
     <section>
       <div class="container">
@@ -29,7 +35,11 @@
             <div class="card-body">
               <h5  class="card-title">{{product.title}}</h5>
               <hr>
+<<<<<<< HEAD
               <p class="card-text">{{product.description | truncatewords:8}}</p>
+=======
+              <p class="card-text">{{product.description}}</p>
+>>>>>>> 3d44726cf648dc3486cd21379e2fa3374c5fc728
               <P>Price :{{product.get_display_price}}</P>
               <button class="btn btn-primary "><a href="{% url 'product_detail' product.category.slug  product.slug %}"> view detail</a></button>
             </div>

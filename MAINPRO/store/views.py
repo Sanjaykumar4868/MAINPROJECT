@@ -85,7 +85,11 @@ def checkout(request):
 
                     items.append({
                         'price_data': {
+<<<<<<< HEAD
                             'currency': 'INR',
+=======
+                            'currency': 'usd',
+>>>>>>> 3d44726cf648dc3486cd21379e2fa3374c5fc728
                             'product_data': {
                                 'name' :product.title,
                             },

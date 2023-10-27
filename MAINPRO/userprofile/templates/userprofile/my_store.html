@@ -23,6 +23,10 @@
 
     <h2>my orders</h2>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3d44726cf648dc3486cd21379e2fa3374c5fc728
         <div class="flex flex-wrap">
             <div class="w-1/4">
                 <strong>Order id</strong>
@@ -57,7 +61,11 @@
     <hr>
 
 
+<<<<<<< HEAD
   <a href="{% url 'add_product' %}"> <button class="btn btn-primary"> add products</button></a>
+=======
+   <button class="btn btn-primary"> <a href="{% url 'add_product' %}">add products</a></button>
+>>>>>>> 3d44726cf648dc3486cd21379e2fa3374c5fc728
 
    <h2>my products</h2>
    {% if products %}
@@ -66,17 +74,31 @@
                 <div class="row row-cols-1 row-cols-md-2 align ">
                 {% for product in products %}
                 <div class="col mb-4 imgdiv">
+<<<<<<< HEAD
                     <div class="card" >
                         <img src="{{ product.get_thumbnail }}" class="card-img-top" alt="text"  style="height: 20rem;">
+=======
+                    <div class="card">
+                   
+                        <img src="{{ product.get_thumbnail }}" class="card-img-top" alt="text">
+>>>>>>> 3d44726cf648dc3486cd21379e2fa3374c5fc728
                     
                     <div class="card-body">
                         <h5  class="card-title">{{product.title}}</h5>
                         <hr>
                    
                         <P>Price :{{product.get_display_price}}</P>
+<<<<<<< HEAD
                         <p><strong>Status: </strong>{{ product.get_status_display }}</p>
 
                         <a href="{% url 'edit_product' product.id %}"><button class="btn btn-primary ">view detail</button></a>
+=======
+                      
+
+                        <p><strong>Status: </strong>{{ product.get_status_display }}</p>
+
+                        <button class="btn btn-primary "><a href="{% url 'edit_product' product.id %}"> view detail</a></button>
+>>>>>>> 3d44726cf648dc3486cd21379e2fa3374c5fc728
                     </div>
                     </div>
                 </div>
