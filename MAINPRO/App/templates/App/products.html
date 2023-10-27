@@ -1,0 +1,49 @@
+{% extends 'App/base.html' %}
+{% load static %}
+{% load menu %}
+
+
+
+
+{% block title%}
+ Product View
+{% endblock %} 
+
+  <div class="arrow-btn">
+    <a href="#"><span class="fa fa-angle-up"></span></a>
+  </div>
+
+   
+  {% block body_block %}
+
+<!-- first body start -->
+    <section>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 align ">
+        {% for product in products %}
+        <div class="col mb-4 imgdiv">
+          <div class="card">
+           
+              <img src="{{ product.get_thumbnail }}" class="card-img-top" alt="text">
+           
+            <div class="card-body">
+              <h5  class="card-title">{{product.title}}</h5>
+              <hr>
+              <p class="card-text">{{product.description | truncatewords:8}}</p>
+              <P>Price :{{product.get_display_price}}</P>
+              <button class="btn btn-primary "><a href="{% url 'product_detail' product.category.slug  product.slug %}"> view detail</a></button>
+            </div>
+          </div>
+        </div>
+        {% endfor %}  
+      </div>
+      </div>
+    </section>
+      
+<!-- first body end -->
+
+
+{% endblock %}
+
+
+
